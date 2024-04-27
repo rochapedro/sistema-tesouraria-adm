@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdministrativeCode;
-use Illuminate\Http\Request;
+use App\Http\Requests\AdministrativeCodeRequest;
 
 class AdministrativeCodeController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
@@ -27,8 +28,10 @@ class AdministrativeCodeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AdministrativeCodeRequest $request)
     {
+        $request->validated();
+
         AdministrativeCode::create([
             'description' => $request->description,
         ]);
@@ -50,13 +53,13 @@ class AdministrativeCodeController extends Controller
      */
     public function edit(AdministrativeCode $administrativeCode)
     {
-        //
+        return view('pages/administrative-codes/edit')->with('administrativeCode', $administrativeCode);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AdministrativeCode $administrativeCode)
+    public function update(AdministrativeCodeRequest $request, AdministrativeCode $administrativeCode)
     {
         //
     }

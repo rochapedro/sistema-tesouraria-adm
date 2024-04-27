@@ -9,9 +9,10 @@
   <!-- Importação dos estilos do Font Awesome -->
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini" style="height: auto;">
 <div class="wrapper">
   {{ $slot }}
+  <x-footer />
 </div>
 </body>
 </html>

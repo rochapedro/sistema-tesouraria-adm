@@ -37,12 +37,7 @@
                                 <tr>
                                     <td>{{ $administrative_code->id }}</td>
                                     <td>{{ $administrative_code->description }}</td>
-                                    <td style="width: 95px">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
-                                            <button class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        </div>
-                                    </td>
+                                    <x-table-actions editUrl="{{ route('administrative-codes.edit', $administrative_code) }}" destroyUrl="{{ route('administrative-codes.index', $administrative_code) }}" />
                                 </tr>
                                 @endforeach
                             </tbody>
